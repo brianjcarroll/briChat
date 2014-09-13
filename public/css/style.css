@@ -1,0 +1,139 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial;
+}
+
+.container {
+  width: 100%;
+  max-width: 1020px;
+  margin: 50px auto 0px auto;
+}
+
+.welcome {
+  height: 600px;
+  background-color: #333;
+}
+
+#userNameForm {
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#userNameInput {
+  border: 0;
+  border-bottom: 1px solid #fbfbfa;
+  background-color: #333;
+  width: 100%;
+  margin-top: 200px;
+  color: #fbfbfa;
+  text-align: center;
+  font-size: 48px;
+  padding: 10px;
+
+}
+
+#userNameInput:focus {
+  outline: none;
+}
+
+.submit-username-button {
+  outline: none;
+  padding: 20px 40px;
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+  border: 1px solid #fbfbfa;
+  color: #fbfbfa;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: all .2s ease-in;
+}
+
+.submit-username-button:hover {
+  background-color: #fbfbfa;
+  color: #333;
+}
+
+.chat-room {
+  height: 600px;
+  display: none;
+}
+
+.message-container {
+  background-color: #fbfbfa;
+  height: 100%;
+  width: 80%;
+  float: left;
+  overflow: scroll;
+}
+
+.messages {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.message {
+  padding: 20px;
+}
+
+.message-username {
+
+}
+
+.message:nth-child(even) {
+  background-color: #eee;
+}
+
+
+.user-container {
+  background-color: #333;
+  height: 100%;
+  width: 20%;
+  float: right;
+  overflow: scroll;
+}
+
+.users {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  color: #fbfbfa;
+}
+
+.user {
+  padding: 20px;
+}
+
+.user:nth-child(even) {
+  background-color: #fbfbfa;
+  color: #333;
+}
+
+
+.input-wrapper {
+  clear: both;
+  margin-top: 20px;
+}
+
+
+#messageInput {
+  width: 80%;
+  height: 50px;
+  font-size: 24px;
+  padding: 10px;
+}
+
+#messageInput:focus {
+  outline: purple;
+}
+
+.send-button {
+
+}

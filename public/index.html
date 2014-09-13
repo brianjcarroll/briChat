@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Brian's Chat</title>
+
+  <link rel="stylesheet" href="/css/style.css" media="screen" charset="utf-8">
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/libs/jquery.min.js" charset="utf-8"></script>
+  <script src="/js/site.js" charset="utf-8"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="welcome">
+      <form id="userNameForm" action="">
+        <input id="userNameInput" autocomplete="off" placeholder="enter your name...">
+        <button class="submit-username-button">join chat</button>
+
+      </form>
+    </div>
+
+    <div class="chat-room">
+      <div class="message-container">
+        <ul class="messages">
+          <!-- <li class="message"></li> -->
+        </ul>
+      </div>
+
+      <div class="user-container">
+        <ul class="users">
+          <!-- <li class="user"></li> -->
+        </ul>
+      </div>
+
+      <form id="messageForm" class="input-wrapper" action="">
+        <input id="messageInput" autocomplete="off" />
+        <button class="send-msg-button">Send</button>
+      </form>
+
+    </div>
+
+  </div>
+</body>
+
+</html>
