@@ -23,6 +23,12 @@ app.use(express.static(__dirname, 'public'));
 
 app.get('brichat.herokuapp.com', function(req, res) {
   res.sendFile('index.html');
+    if (reqq.url === '/favicon.ico') {
+    res.writeHead(200, {'Content-Type': 'image/x-icon'} );
+    res.end();
+    console.log('favicon requested');
+    return;
+  }
 });
 
 io.on('connection', function(socket) {
