@@ -21,7 +21,7 @@ app.use(express.static(__dirname, 'public'));
 // app.use(express.static(__dirname + '/public/js'));
 // app.use("/images",  express.static(__dirname + '/public/images'));
 
-app.get('/', function(req, res) {
+app.get('brichat.herokuapp.com', function(req, res) {
   res.sendFile('index.html');
 });
 
