@@ -22,7 +22,7 @@ app.use(express.static(__dirname, 'public'));
 // app.use("/images",  express.static(__dirname + '/public/images'));
 
 app.get('/', function(req, res) {
-  res.sendFile('index.html');
+  res.sendFile('/index.html');
 });
 
 io.on('connection', function(socket) {
