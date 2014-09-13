@@ -12,6 +12,8 @@ function NewUser (name) {
 
 var activeUsers = [];
 
+app.set('port', (process.env.PORT || 5000));
+
 app.use(express.static(__dirname, 'public'));
 // app.use(express.static(path.join(__dirname, '/public/css')));
 
@@ -80,6 +82,6 @@ io.on('connection', function(socket) {
 
 });
 
-http.listen(8080, function() {
+http.listen(app.get('port'), function() {
   console.log('listening on *:8080');
 });
