@@ -13,7 +13,7 @@ function NewUser (name) {
 }
 
 var activeUsers = [];
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/public')));
 // app.use(express.static(__dirname, 'public'));
 // app.use(express.static(path.join(__dirname, '/public/css')));
 // app.use(express.static(__dirname + '/public/css'));
@@ -43,8 +43,6 @@ io.on('connection', function(socket) {
     });
     console.log(activeUsers);
   });
-
-
 
   socket.on('new msg', function(msg){
     console.log(msg);
