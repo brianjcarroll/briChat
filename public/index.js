@@ -14,7 +14,7 @@ function NewUser (name) {
 
 var activeUsers = [];
 
-app.use(express.static(__dirname, 'public'));
+app.use(express.static(__dirname, '/public'));
 // app.use(express.static(path.join(__dirname, '/public/css')));
 
 // app.use(express.static(__dirname + '/public/css'));
@@ -22,16 +22,13 @@ app.use(express.static(__dirname, 'public'));
 // app.use("/images",  express.static(__dirname + '/public/images'));
 
 app.get('/', function(req, res) {
-  res.sendFile('/index.html');
+  res.sendFile('index.html');
 });
 
 io.on('connection', function(socket) {
 
   var currentUser = new NewUser();
   var idx = null;
-
-
-
 
   socket.on('new user', function(name){
     console.log('new user: ' + name);
@@ -83,5 +80,5 @@ io.on('connection', function(socket) {
 });
 
 http.listen(port, function() {
-  console.log('listening on *:8080');
+  console.log('listening on *:5000');
 });
