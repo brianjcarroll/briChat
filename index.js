@@ -16,7 +16,6 @@ var activeUsers = [];
 app.use(express.static(path.join(__dirname, 'public')));
 // app.use(express.static(__dirname, 'public'));
 // app.use(express.static(path.join(__dirname, '/public/css')));
-
 // app.use(express.static(__dirname + '/public/css'));
 // app.use(express.static(__dirname + '/public/js'));
 // app.use("/images",  express.static(__dirname + '/public/images'));
