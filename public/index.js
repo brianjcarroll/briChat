@@ -5,14 +5,14 @@ var io = require('socket.io')(http);
 var fs = require('fs');
 var path = require('path');
 
+var port = Number(process.env.PORT || 5000);
+
 function NewUser (name) {
   this.name = name || 'new user';
   this.id = null;
 }
 
 var activeUsers = [];
-
-app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname, 'public'));
 // app.use(express.static(path.join(__dirname, '/public/css')));
@@ -21,14 +21,8 @@ app.use(express.static(__dirname, 'public'));
 // app.use(express.static(__dirname + '/public/js'));
 // app.use("/images",  express.static(__dirname + '/public/images'));
 
-app.get('brichat.herokuapp.com', function(req, res) {
+app.get('/', function(req, res) {
   res.sendFile('index.html');
-    if (reqq.url === '/favicon.ico') {
-    res.writeHead(200, {'Content-Type': 'image/x-icon'} );
-    res.end();
-    console.log('favicon requested');
-    return;
-  }
 });
 
 io.on('connection', function(socket) {
@@ -88,6 +82,6 @@ io.on('connection', function(socket) {
 
 });
 
-app.listen(app.get('port'), function() {
+http.listen(port, function() {
   console.log('listening on *:8080');
 });
