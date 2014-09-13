@@ -76,6 +76,6 @@ io.on('connection', function(socket) {
 
 });
 
-http.listen(port, function() {
-  console.log('listening on *:5000');
+app.listen(port, function() {
+  console.log('listening on ' + port);
 });
