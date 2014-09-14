@@ -25,6 +25,15 @@ $(document).ready(function(){
   userName.focus();
 
   userForm.on('submit', function(){
+    var nameCheck = new RegExp(/^[a-z0-9_-]{3,16}$/);
+    if(!nameCheck.test(userName.val().toLowerCase())){
+      userName.val().toLowerCase().toString().length < 3
+      ? userName.attr('placeholder', 'too short bro')
+      : userName.attr('placeholder', 'too long bro');
+      userName.val('').focus();
+
+      return false;
+    }
     socket.emit('new user', userName.val());
     userName.val('');
     $('.welcome').hide();
@@ -38,7 +47,7 @@ $(document).ready(function(){
   });
 
   socket.on('join chat', function(data){
-    $('.messages').append($('<li>').addClass('message').text(data.user.name + ' has connected'));
+    $('.messages').append($('<li>').addClass('message message-connection').text(data.user.name + ' has connected'));
     updateUserList(data.list);
   });
 
@@ -49,7 +58,12 @@ $(document).ready(function(){
   });
 
   socket.on('new msg', function(msg){
-    $('.messages').append($('<li>').addClass('message').html('<span class="message-username">'+ msg.name + ': </span>' + '<span class="message-text">' + msg.message + '</span>'));
+    $('.messages').append($('<li>').addClass('message')
+    .html('<span class="message-username" style="background-color:' + msg.color + ';">' + msg.name + '</span>' + '<span class="message-text">' + msg.message + '</span>'));
+
+    $('.message-container').animate({
+      scrollTop: $('.messages').height()
+      }, 100);
   });
 
   socket.on('connect', function(){
@@ -58,7 +72,7 @@ $(document).ready(function(){
 
   socket.on('user quit', function(user){
 
-    $('.messages').append($('<li>').addClass('message').text(user.name + ' has disconnected'));
+    $('.messages').append($('<li>').addClass('message message-connection').text(user.name + ' has disconnected'));
     $('#' + user.user.id).remove();
     // updateUserList(user.list);
   });

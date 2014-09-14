@@ -1,16 +1,17 @@
 {
   "name": "brians-chat",
-  "version": "0.0.1",
+  "version": "0.0.1-4",
   "description": "A chat app built on Node.js and Socket.io",
   "dependencies": {
     "express": "^4.9.0",
     "socket.io": "^1.1.0"
   },
-   "engines": {
+  "engines": {
     "node": "0.10.x"
   },
-    "main": "index.js",
-    "scripts": {
-      "start": "node index.js"
-    }
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "subdomain": "brichat"
 }

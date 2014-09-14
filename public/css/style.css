@@ -71,6 +71,7 @@ body {
   width: 80%;
   float: left;
   overflow: scroll;
+  position: relative;
 }
 
 .messages {
@@ -80,11 +81,33 @@ body {
 }
 
 .message {
+  /*padding: 20px;*/
+  /*overflow: auto;*/
+  word-wrap: break-all;
+  display: block;
+  clear: both;
+}
+
+.message-connection {
+  color: rgba(0,0,0,.4);
   padding: 20px;
 }
 
 .message-username {
+  padding: 20px;
+  display: inline-block;
+  width: 120px;
+  text-align: center;
+  /*word-wrap: break-word;*/
+  text-overflow: ellipsis;
+  overflow: auto;
+  float: left;
+}
 
+.message-text {
+  padding: 20px;
+  display: inline-block;
+  float: left;
 }
 
 .message:nth-child(even) {

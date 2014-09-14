@@ -7,6 +7,14 @@ var path = require('path');
 
 var port = Number(process.env.PORT || 5000);
 
+var userColors = [
+  '#B19CD9','#DEA5A4','#FF6961',
+  '#779ECB','#AEC6CF','#77DD77',
+  '#FDFD96','#FFB347','#966FD6',
+  '#03C03C','#CFCFC4','#CB99C9',
+  '#C23B22','#B39EB5','#51FFC3'
+];
+
 function NewUser (name) {
   this.name = name || 'new user';
   this.id = null;
@@ -39,6 +47,7 @@ io.on('connection', function(socket) {
     var id = this.id;
     currentUser.name = name;
     currentUser.id = id;
+    currentUser.color = userColors[Math.floor(Math.random() * 15)];
     activeUsers.push(currentUser);
 
     io.emit('new user', currentUser);
@@ -53,7 +62,8 @@ io.on('connection', function(socket) {
     console.log(msg);
     io.emit('new msg', {
       message: msg,
-      name: currentUser.name
+      name: currentUser.name,
+      color: currentUser.color
       });
   });
 
